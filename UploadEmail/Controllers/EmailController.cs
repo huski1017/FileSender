@@ -28,14 +28,11 @@ namespace UploadEmail.Controllers
         {
             if (Email.To != null && Email.Subject != null && File.ContentLength > 0)
             {
-                //string path = Path.Combine(Server.MapPath("~/Uploaded"), Path.GetFileName(File.FileName));
-                //File.SaveAs(path);
-
                 SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
                 client.EnableSsl = true;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("HubertTester1@gmail.com", "toto42toto42");
+                client.Credentials = new NetworkCredential("HubertTester1@gmail.com", "AddPassword");
 
                 MailMessage msg = new MailMessage();
                 msg.To.Add(Email.To);

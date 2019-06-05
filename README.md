@@ -1,1 +1,1 @@
-# Fenestrae
+Short project for a job interview
